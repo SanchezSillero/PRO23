@@ -5,15 +5,13 @@ public class Ejercicio1 {
     // A continuación se mostrará el contenido de ese array junto al índice (0 – 9)
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Introduzca 10 números");
         int[] numeros = new int[10];
+        System.out.println("Introduzca 10 números");
+
+
         for (int i = 0; i < numeros.length; i++) {
-            numeros[i]= scanner.nextInt();
+            numeros[i] = scanner.nextInt();
             System.out.println(i + ". " + numeros[i]);
         }
-
     }
-
-
-
 }
