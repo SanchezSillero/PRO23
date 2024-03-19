@@ -6,8 +6,6 @@ public class CuadradoMagico {
 
     public static void main(String[] args) {
         tamañoCuadrado();
-        generarMagico();
-        mostrarCuadrado();
     }
 
     public static void tamañoCuadrado() {
