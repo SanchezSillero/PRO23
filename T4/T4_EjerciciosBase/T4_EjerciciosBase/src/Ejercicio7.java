@@ -12,12 +12,13 @@ public class Ejercicio7 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         String[] palabras = new String[10];
-        int eleccionMenu = new int;
+        int eleccionMenu;
+        int numeroAzar;
 
         //Rellenamos el array
         for (int i = 0; i < palabras.length; i++) {
             System.out.println("Introduce una palabra");
-            palabras [i] = scanner.next();
+            palabras[i] = scanner.next();
         }
 
         //Desplegar menú
@@ -30,12 +31,19 @@ public class Ejercicio7 {
         System.out.println("¿Qué opción desea (introduzca el nº correspondiente 1-6)?");
         eleccionMenu = scanner.nextInt();
 
-        if (eleccionMenu==1){ //mostrar array
-            System.out.println(palabras);
+        if (eleccionMenu == 1) { //mostrar array
+            for (String item : palabras) {
+                System.out.print(item + " ");
+            }
 
         } else if (eleccionMenu==2) { //mostrar una posicion al azar del array
+            numeroAzar=(int)(Math.random()*10);
+            System.out.println( palabras[numeroAzar]);
+
 
         } else if (eleccionMenu==3) { //sumar todas las letras
+            
+
 
         } else if (eleccionMenu==4) { //media de letras por palabra
 
@@ -43,8 +51,9 @@ public class Ejercicio7 {
 
         } else if (eleccionMenu==6) { //palabra con menos letras
 
-        }else 
+        }else
+*/
 
-
+        }
     }
 }
