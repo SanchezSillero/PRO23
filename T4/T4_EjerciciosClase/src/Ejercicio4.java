@@ -11,14 +11,36 @@ public class Ejercicio4 {
         Scanner teclado = new Scanner(System.in);
         int tamaño = teclado.nextInt();
         int[] numeros = new int[tamaño];
+        int aux;
+        int[] numerosDerecha = new int[tamaño];
+        int[] numerosIzquierda = new int[tamaño];
+
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = teclado.nextInt();
         }
         for (int item : numeros) {
             System.out.print(item + " ");
         }
-        for (int i = 0; i < numeros.length; i++) {
-            numeros[i]
+        aux = numeros[tamaño - 1];
+        for (int i = tamaño - 1; i > 0; i--) {
+            numerosDerecha[i] = numeros[i - 1];
+        }
+        numerosDerecha[0] = aux;
+
+        System.out.println();
+        for (int item : numerosDerecha) {
+            System.out.print(item + " ");
+        }
+
+        aux = numeros[0];
+        for (int i = 0; i < tamaño - 1; i++) {
+            numerosIzquierda[i] = numeros[i + 1];
+        }
+        numerosIzquierda[tamaño - 1] = aux;
+
+        System.out.println();
+        for (int item : numerosIzquierda) {
+            System.out.print(item + " ");
         }
     }
 }
