@@ -11,23 +11,52 @@ segundo al tercero, ..., y el último al primero).
 - Mostrar la posición del primer par y del último impar.
   hay que hacer todo de golpe, pero opcionalmente se puede hacer un menú que indique cada una de las opciones*/
 public class Ejercicio5 {
+    static int[] numeros = new int[10];
     public static void main(String[] args) {
-        int[] numeros= new int[10];
+        System.out.println("Generando 10 numeros aleatorios...");
         for (int i = 0; i < numeros.length; i++) {
-            numeros[i]=(int) (Math.random()*10);
+            numeros[i] = (int) (Math.random() * 10);
+        }
+        mostrarArray();
+    }
 
-        }
-        for (int item : numeros) {
-            System.out.print(item+", ");
-        }
-        for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i]%2==0){
-                numeros[i]=numeros[i]+1;
-            }else numeros[i]=numeros[i]-1;
-        }
+    //Metodos para el menu
+
+    static public void mostrarArray() {
         System.out.println();
         for (int item : numeros) {
-            System.out.print(item+", ");
+            System.out.print(item + ", ");
         }
     }
+
+    static public void incrementarPares() {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i] % 2 == 0) {
+                numeros[i] = numeros[i] + 1;
+            } else numeros[i] = numeros[i] - 1;
+        }
+        mostrarArray();
+    }
+
+    static public void duplicarPositivos() {
+        for (int i = 0; i < numeros.length; i++) {
+            if (numeros[i]%2==0 && numeros[i]<5){
+                numeros[i]=numeros[i]*2;
+            }
+        }
+
+
+        mostrarArray();
+    }
+
+    static public void sumarYrestar(){
+        for (int i = 0; i < numeros.length; i++) {
+            int aleatorio = (int)(Math.random()*11)-5;
+            numeros[i]+=aleatorio;
+        }
+    mostrarArray();
+    }
+
 }
+
+
