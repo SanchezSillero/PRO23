@@ -14,84 +14,83 @@ public class Ejercicio5 {
     static int[] numeros = new int[10];
 
     public static void main(String[] args) {
-        System.out.println("Generando 10 numeros aleatorios...");
+        System.out.println("Generando 10 numeros aleatorios...\n");
         for (int i = 0; i < numeros.length; i++) {
             numeros[i] = (int) (Math.random() * 10);
         }
-        mostrarArray();
+        System.out.println("\n¿Qué desea hacer? Seleccione una de las siguientes opciones:");
     }
 
     //Metodos para el menu
-
-    static public void mostrarArray() {
-        System.out.println();
+    public static void mostrarNumeros() {
         for (int item : numeros) {
             System.out.print(item + ", ");
         }
     }
 
-    static public void incrementarPares() {
+
+    public static void incrementarPares() {
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 == 0) {
                 numeros[i] = numeros[i] + 1;
             } else numeros[i] = numeros[i] - 1;
         }
-        mostrarArray();
+
     }
 
-    static public void duplicarPositivos() {
+    public static void duplicarPositivos() {
         for (int i = 0; i < numeros.length; i++) {
             if (numeros[i] % 2 == 0 && numeros[i] < 5) {
                 numeros[i] = numeros[i] * 2;
             }
         }
-        mostrarArray();
+        mostrarNumeros();
     }
 
-    static public void sumarYrestar() {
+    public static void sumarYrestar() {
         for (int i = 0; i < numeros.length; i++) {
             int aleatorio = (int) (Math.random() * 11) - 5;
             numeros[i] += aleatorio;
         }
-        mostrarArray();
+        mostrarNumeros();
     }
 
-    static public void moverDerecha() {
+    public static void moverDerecha() {
         int aux = numeros[numeros.length - 1];
         for (int i = numeros.length - 1; i > 0; i--) {
             numeros[i] = numeros[i - 1];
         }
         numeros[0] = aux;
-        mostrarArray();
+        mostrarNumeros();
     }
 
-    static public void intercambios() {
+    public static void intercambios() {
         for (int i = 0; i < numeros.length - 1; i += 2) {
             int aux = numeros[i];
             numeros[i] = numeros[i + 1];
             numeros[i + 1] = aux;
         }
-        mostrarArray();
+        mostrarNumeros();
     }
 
-    static public void invertir() {
+    public static void invertir() {
         System.out.println();
-        for (int i = numeros.length-1; i >= 0; i--) {
-            System.out.print(numeros[i]+", ");
+        for (int i = numeros.length - 1; i >= 0; i--) {
+            System.out.print(numeros[i] + ", ");
         }
     }
 
-    static public void primerParUltimoImpar(){
+    public static void primerParUltimoImpar() {
         for (int i = 0; i < numeros.length; i++) {
-            if (numeros[i]%2==0){
-                System.out.print("el primer par es "+numeros[i]);
+            if (numeros[i] % 2 == 0) {
+                System.out.print("el primer par es " + numeros[i]);
                 break;
             }
         }
         System.out.println();
-        for (int i = numeros.length-1; i >=0 ; i--) {
-            if (numeros[i]%2!=0){
-                System.out.print("el último impar es "+numeros[i]);
+        for (int i = numeros.length - 1; i >= 0; i--) {
+            if (numeros[i] % 2 != 0) {
+                System.out.print("el último impar es " + numeros[i]);
                 break;
             }
         }
