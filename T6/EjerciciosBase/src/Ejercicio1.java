@@ -8,10 +8,13 @@ import model.Persona;
         - Constructores:
             - un constructor que permita crear una persona con todos los datos
             - un constructor que permita crear una persona sin peso ni altura
-            - un constructor que permita crear una persona con nombre y apellidos, el resto de datos los pondrá a 0, excepto el dni que lo pondrá a 111111111X
-            - un constructor que permita crear una persona sin datos de entrada. Los inicializará todos a "datos por defecto", 1111111111X y 0 respectivamente*/
+            - un constructor que permita crear una persona con nombre y apellidos,
+                el resto de datos los pondrá a 0, excepto el dni que lo pondrá a 111111111X
+            - un constructor que permita crear una persona sin datos de entrada. Los inicializará
+                todos a "datos por defecto", 1111111111X y 0 respectivamente*/
 public class Ejercicio1 {
     public static void main(String[] args) {
         Persona persona1 = new Persona();
+        persona1.mostrarDatos();
     }
 }
