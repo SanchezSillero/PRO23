@@ -19,13 +19,13 @@ public class Persona {
 
     //constructores:
 
-    public Persona(String nombre, String apellido, String dni, int edad, int altura, double peso) {
+    public Persona(String nombre, String apellido, String dni, int edad, double peso, int altura) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.edad = edad;
-        this.altura = altura;
         this.peso = peso;
+        this.altura = altura;
 
     }
 
