@@ -6,6 +6,8 @@ public class Persona {
     private String nombre, apellido, dni;
     private int edad, altura;
     private double peso;
+    private char genero;
+
 
     // métodos:
     public void mostrarDatos() {
@@ -15,17 +17,27 @@ public class Persona {
         System.out.println("Edad " + edad);
         System.out.println("Peso " + peso);
         System.out.println("Altura " + altura);
+        System.out.println("Género "+ genero);
     }
+    public void incrementarEdad (int incremento){
+        edad += incremento;
+    }
+
+    public double calcularIMC (){
+        return (peso/Math.pow((double)altura/100,2));
+    }
+
 
     //constructores:
 
-    public Persona(String nombre, String apellido, String dni, int edad, double peso, int altura) {
+    public Persona(String nombre, String apellido, String dni, int edad, double peso, int altura, char genero) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
         this.edad = edad;
         this.peso = peso;
         this.altura = altura;
+        this.genero = genero;
 
     }
 
@@ -47,6 +59,8 @@ public class Persona {
         this.apellido = "Por defecto";
         this.dni = "11111111X";
     }
+
+
 
     //getters y setters asociados
 
@@ -96,5 +110,13 @@ public class Persona {
 
     public void setPeso(double peso) {
         this.peso = peso;
+    }
+
+    public char getGenero() {
+        return genero;
+    }
+
+    public void setGenero(char genero) {
+        this.genero = genero;
     }
 }
