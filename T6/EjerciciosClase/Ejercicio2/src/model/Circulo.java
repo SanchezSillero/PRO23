@@ -17,6 +17,12 @@ public class Circulo {
         diametro = radio*2;
     }
 
+    public void mostrarDatos(){
+        System.out.println("Radio= "+radio);
+        System.out.println("Diámetro= "+diametro);
+        System.out.println("Área= "+area);
+    }
+
     public double getRadio() {
         return radio;
     }

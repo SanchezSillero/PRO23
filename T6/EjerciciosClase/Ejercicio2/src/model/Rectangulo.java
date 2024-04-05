@@ -19,6 +19,12 @@ public class Rectangulo {
         perimetro = 2*base + 2*altura;
     }
 
+    public void mostrarDatos(){
+        System.out.println("Base= "+base);
+        System.out.println("Altura= "+altura);
+        System.out.println("Área= "+area);
+        System.out.println("Perímetro= "+perimetro);
+    }
     public double getBase() {
         return base;
     }
