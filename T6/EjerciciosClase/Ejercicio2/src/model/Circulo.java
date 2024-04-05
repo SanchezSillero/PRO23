@@ -1,12 +1,12 @@
 package model;
 
-public class Círculo {
+public class Circulo {
     private double radio, diametro, area;
 
-    public Círculo() {
+    public Circulo() {
     }
 
-    public Círculo(double radio) {
+    public Circulo(double radio) {
         this.radio = radio;
     }
 

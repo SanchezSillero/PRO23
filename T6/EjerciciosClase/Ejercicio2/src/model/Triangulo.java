@@ -1,7 +1,7 @@
 package model;
 
 public class Triangulo {
-    private double base, altura;
+    private double base, altura, area;
 
     public Triangulo() {
     }
@@ -11,8 +11,8 @@ public class Triangulo {
         this.altura = altura;
     }
 
-    public void calcularArea(double area){
-        area = (base*altura)/2;
+    public void calcularArea(){
+      area = (base*altura)/2;
     }
 
     public double getBase() {
@@ -29,5 +29,13 @@ public class Triangulo {
 
     public void setAltura(double altura) {
         this.altura = altura;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public void setArea(double area) {
+        this.area = area;
     }
 }
