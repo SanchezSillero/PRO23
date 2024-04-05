@@ -11,6 +11,12 @@ public class Triangulo {
         this.altura = altura;
     }
 
+    public void mostrarDatos(){
+        System.out.println("Base= "+base);
+        System.out.println("Altura= "+altura);
+        System.out.println("Área= "+area);
+    }
+
     public void calcularArea(){
       area = (base*altura)/2;
     }
