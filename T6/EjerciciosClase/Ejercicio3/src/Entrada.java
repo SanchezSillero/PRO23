@@ -17,7 +17,5 @@ public class Entrada {
         System.out.println("Agignatura 3: " + alumno1.getAsignatura3().getCalificacion());
         System.out.println("La media es: " + profesor1.calcularMedia(alumno1));
 
-
-
     }
 }
