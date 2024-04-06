@@ -38,6 +38,7 @@ public class Agenda {
             System.out.println("El usuario con este DNI ya está en la agenda");
         }
     }
+
     public void borrarPersona (String dni){
         if (estaPersona(dni)!=null){
             listaPersonas.remove(estaPersona(dni));
