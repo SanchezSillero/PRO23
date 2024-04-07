@@ -13,7 +13,7 @@ public class EntidadBancaria {
         this.listaCuentas = new ArrayList<>();
     }
 
-    public void mostrarDatos(){
+    public void mostrarDatos() {
         System.out.println("Entidad: " + nombre);
         System.out.println("CIF: " + cif);
         for (Cuenta cuenta : listaCuentas) {
@@ -21,8 +21,21 @@ public class EntidadBancaria {
         }
     }
 
-    public void agregarCuenta(Cuenta cuenta){
+    public Cuenta buscarCuenta(String dni, int pin) {
+        for (Cuenta cuenta : listaCuentas) {
+            if (cuenta.getDni().equalsIgnoreCase(dni) && cuenta.getPin() == pin) {
+                return cuenta;
+            }
+        }
+        return null;
+    }
+
+    public void agregarCuenta(Cuenta cuenta) {
         listaCuentas.add(cuenta);
+    }
+
+    public void eliminarCuenta(Cuenta cuenta) {
+        listaCuentas.remove(cuenta);
     }
 
 
