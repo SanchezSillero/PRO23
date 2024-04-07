@@ -12,4 +12,10 @@ import lombok.Setter;
 
 public class Persona {
      private String dni, nombre, correo;
+
+     public void mostrarDatos(){
+          System.out.println("DNI = " + dni);
+          System.out.println("nombre = " + nombre);
+          System.out.println("correo = " +correo);
+     }
 }
