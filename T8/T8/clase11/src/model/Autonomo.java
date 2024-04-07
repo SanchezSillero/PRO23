@@ -13,6 +13,13 @@ import lombok.Setter;
 public class Autonomo extends Trabajador{
     private int cuota, seguro;
 
+
+    public Autonomo(String dni, String nombre, String correo, int salario, int cuota, int seguro) {
+        super(dni, nombre, correo, salario);
+        this.cuota = cuota;
+        this.seguro = seguro;
+    }
+
     @Override
     public void trabajar() {
         System.out.println("El autonomo se pone a trabajar");

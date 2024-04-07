@@ -13,6 +13,11 @@ import lombok.Setter;
 public class Asalariado extends Trabajador{
     private int numeroPagas;
 
+    public Asalariado(String dni, String nombre, String correo, int salario, int numeroPagas) {
+        super(dni, nombre, correo, salario);
+        this.numeroPagas = numeroPagas;
+    }
+
     @Override
     public void trabajar() {
         System.out.println("El asalariado se pone a trabajar");

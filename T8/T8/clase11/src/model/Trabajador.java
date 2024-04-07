@@ -18,4 +18,8 @@ public abstract class Trabajador extends Persona{
         System.out.println("Salario= "+salario);
     }
 
+    public Trabajador(String dni, String nombre, String correo, int salario) {
+        super(dni, nombre, correo);
+        this.salario = salario;
+    }
 }

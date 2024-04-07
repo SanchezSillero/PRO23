@@ -1,16 +1,11 @@
 package model;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
-
-@NoArgsConstructor
-@AllArgsConstructor
-@Getter
-@Setter
-
 public class Accionista extends Persona implements Votador{
+
+    public Accionista(String dni, String nombre, String correo) {
+        super(dni, nombre, correo);
+    }
+
     @Override
     public void mostrarDatos() {
         super.mostrarDatos();
