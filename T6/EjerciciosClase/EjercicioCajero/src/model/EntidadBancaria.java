@@ -30,6 +30,17 @@ public class EntidadBancaria {
         return null;
     }
 
+    public ArrayList<Cuenta> cuentasCliente(String dni){
+        ArrayList<Cuenta> cuentasCliente = new ArrayList<>();
+        for (Cuenta cuenta : listaCuentas){
+            if (cuenta.getDni().equalsIgnoreCase(dni)){
+                cuentasCliente.add(cuenta);
+            }
+        }
+        return cuentasCliente.isEmpty() ? null : cuentasCliente;
+    }
+
+
     public void agregarCuenta(Cuenta cuenta) {
         listaCuentas.add(cuenta);
     }

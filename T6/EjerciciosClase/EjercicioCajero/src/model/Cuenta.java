@@ -18,9 +18,9 @@ public class Cuenta {
 
     public void mostrarDatos() {
         System.out.println("Cuenta: " + isbn);
-        System.out.println("Saldo: " + saldo);
+        System.out.println("DNI: " + dni);
         System.out.println("Pin: " + pin);
-        System.out.println("ISBN: " + isbn);
+        System.out.println("Saldo: " + saldo);
     }
 
     public void ingresarDinero(int ingreso) {
