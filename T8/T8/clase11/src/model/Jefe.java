@@ -12,10 +12,13 @@ import lombok.Setter;
 
 public class Jefe extends Trabajador implements Votador{
     private int percAcciones;
+    private Puesto puesto;
 
-    public Jefe(String dni, String nombre, String correo, int salario, int percAcciones) {
+    public Jefe(String dni, String nombre, String correo, int salario, int percAcciones, Puesto puesto) {
         super(dni, nombre, correo, salario);
         this.percAcciones = percAcciones;
+        this.puesto = puesto;
+
     }
 
     @Override
@@ -26,6 +29,7 @@ public class Jefe extends Trabajador implements Votador{
     public void mostrarDatos(){
         super.mostrarDatos();
         System.out.println("percAcciones= "+percAcciones);
+        System.out.println(puesto.getDescripcion());
     }
 
     @Override
