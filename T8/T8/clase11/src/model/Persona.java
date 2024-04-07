@@ -10,7 +10,7 @@ import lombok.Setter;
 @Getter
 @Setter
 
-public class Persona {
+public abstract class Persona {
      private String dni, nombre, correo;
 
      public void mostrarDatos(){

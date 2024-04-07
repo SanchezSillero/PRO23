@@ -8,9 +8,14 @@ import lombok.Setter;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+
 public abstract class Trabajador extends Persona{
     private int salario;
     public abstract void trabajar();
 
+    public void mostrarDatos(){
+      super.mostrarDatos();
+        System.out.println("Salario= "+salario);
+    }
 
 }
