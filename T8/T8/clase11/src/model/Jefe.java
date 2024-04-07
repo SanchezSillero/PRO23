@@ -18,6 +18,7 @@ public class Jefe extends Trabajador implements Votador{
         super(dni, nombre, correo, salario);
         this.percAcciones = percAcciones;
         this.puesto = puesto;
+        setSalario(getSalario()+puesto.getSalarioAdicion());
 
     }
 
