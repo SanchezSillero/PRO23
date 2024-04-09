@@ -1,7 +1,7 @@
 import controller.Coleccion;
-import model.Libro;
-import model.Persona;
+import model.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Entrada {
@@ -11,43 +11,112 @@ public class Entrada {
         System.out.println("\n---BIENVENIDO AL GESTOR MULTIMEDIA---");
         System.out.println("\n\tPulse Enter para entrar");
         scanner.nextLine();
+        int menuOpcion;
 
-        System.out.println("\n---MENÚ DEL GESTOR MULTIMEDIA---\n");
-        System.out.println("\t1. Añadir a la colección\n\t2. Eliminar de la colección\n\t3. Listar elementos\n\t4. Salir\n");
-        System.out.println("¿Qué desea hacer?");
-        int menuOpcion= scanner.nextInt();
+        do {
 
-        switch (menuOpcion){
-            case 1:{
-                System.out.println("¿Qué tipo de elemento quiere añadir?\n\t1. Libro\t2. Video\t3. Audio");
-                int opcion1 = scanner.nextInt();
-                switch (opcion1){
-                    case 1:{
-                        System.out.println("Introduzca un identificador");
-                        int identificador = scanner.nextInt();
-                        System.out.println("Introduzca el título del libro");
-                        String titulo = scanner.next();
-                        System.out.println("Introduzca el nombre del autor");
-                        String nombre = scanner.next();
-                        Persona autor = new Persona(nombre);
-                        System.out.println("Introduzca el tamaño del archivo");
-                        double tamaño = scanner.nextDouble();
-                        System.out.println("Introduzca el formato del archivo");
-                        String formato = scanner.next();
-                        System.out.println("Introduzca el ISBN del libro");
-                        int isbn = scanner.nextInt();
-                        System.out.println("Introduzca el número de páginas que tiene el libro");
-                        int numeroPaginas = scanner.nextInt();
-                        Libro libro = new Libro(identificador ,titulo, autor, tamaño, formato, isbn, numeroPaginas);
-                        coleccion.anadirElemento(libro);
-                    }
+            System.out.println("\n---MENÚ DEL GESTOR MULTIMEDIA---\n");
+            System.out.println("\t1. Añadir a la colección\n\t2. Eliminar de la colección\n\t3. Listar elementos\n\t4. Salir\n");
+            System.out.println("¿Qué desea hacer?");
+            menuOpcion = scanner.nextInt();
+
+            switch (menuOpcion) {
+                case 1: {
+                    int opcion1;
+                    do {
+                        System.out.println("¿Qué tipo de elemento quiere añadir?\n\t1. Libro\t2. Video\t3. Audio\t4. Salir");
+                        opcion1 = scanner.nextInt();
+                        switch (opcion1) {
+                            case 1: {
+                                System.out.println("Introduzca el título del libro");
+                                scanner.nextLine();
+                                String titulo = scanner.nextLine();
+                                System.out.println("Introduzca el nombre del autor");
+                                String nombre = scanner.nextLine();
+                                Persona autor = new Persona(nombre);
+                                System.out.println("Introduzca el tamaño del archivo en MB");
+                                double tamaño = scanner.nextDouble();
+                                System.out.println("Introduzca el formato del archivo (AVI, MP4, MP3, WAV, PDF, EPUB)");
+                                String formatoStr = scanner.next();
+                                Formato formato = Formato.valueOf(formatoStr.toUpperCase());
+                                System.out.println("Introduzca el ISBN del libro");
+                                int isbn = scanner.nextInt();
+                                System.out.println("Introduzca el número de páginas que tiene el libro");
+                                int numeroPaginas = scanner.nextInt();
+                                Libro libro = new Libro(titulo, autor, tamaño, formato, isbn, numeroPaginas);
+                                coleccion.anadirElemento(libro);
+                                break;
+                            }
+                            case 2: {
+                                System.out.println("Introduzca el título del video");
+                                scanner.nextLine();
+                                String titulo = scanner.nextLine();
+                                System.out.println("Introduzca el nombre del autor");
+                                String nombre = scanner.nextLine();
+                                Persona autor = new Persona(nombre);
+                                System.out.println("Introduzca el tamaño del archivo en MB");
+                                double tamaño = scanner.nextDouble();
+                                System.out.println("Introduzca el formato del archivo (AVI, MP4, MP3, WAV, PDF, EPUB)");
+                                String formatoStr = scanner.next();
+                                Formato formato = Formato.valueOf(formatoStr.toUpperCase());
+                                System.out.println("Introduzca el nombre del director");
+                                String nombreDirector = scanner.next();
+                                Persona director = new Persona(nombreDirector);
+                                System.out.println("Introduzca el número de actores");
+                                int numeroActores = scanner.nextInt();
+                                ArrayList<Persona> actores = new ArrayList<>();
+                                for (int i = 0; i < numeroActores; i++) {
+                                    System.out.println("Introduce el nombre del actor " + (i + 1));
+                                    String nombreActor = scanner.next();
+                                    actores.add(new Persona(nombreActor));
+                                }
+                                Video video = new Video(titulo, autor, tamaño, formato, director, actores);
+                                coleccion.anadirElemento(video);
+                                break;
+                            }
+                            case 3: {
+                                System.out.println("Introduzca el título del audio");
+                                scanner.nextLine();
+                                String titulo = scanner.nextLine();
+                                System.out.println("Introduzca el nombre del autor");
+                                String nombre = scanner.nextLine();
+                                Persona autor = new Persona(nombre);
+                                System.out.println("Introduzca el tamaño del archivo en MB");
+                                double tamaño = scanner.nextDouble();
+                                System.out.println("Introduzca el formato del archivo (AVI, MP4, MP3, WAV, PDF, EPUB)");
+                                String formatoStr = scanner.next();
+                                Formato formato = Formato.valueOf(formatoStr.toUpperCase());
+                                System.out.println("Introduzca la duracion del audio");
+                                double duracion = scanner.nextDouble();
+                                System.out.println("Introduzca el soporte del audio(DISCO_DURO, CD, DVD, BLU_RAY, NUBE");
+                                String soporteStr = scanner.next();
+                                Soporte soporte = Soporte.valueOf(soporteStr.toUpperCase());
+                                Audio audio = new Audio(titulo, autor, tamaño, formato, duracion, soporte);
+                                coleccion.anadirElemento(audio);
+                                break;
+                            }
+                            case 4: {
+                                break;
+                            }
+                            default:{
+                                System.out.println("Opción no válida");
+                            }
+                        }
+                    }while (opcion1!=4);
+                }
+                case 2: {
+                }
+                case 3: {
+                }
+                case 4: {
+                    System.out.println("¡HASTA PRONTO!");
+                    break;
+                }
+                default: {
+                    System.out.println("Opción no valida");
                 }
             }
-            case 2:{}
-            case 3:{}
-            case 4:{}
-            default:{}
-        }
+        } while (menuOpcion != 4);
 
     }
 }

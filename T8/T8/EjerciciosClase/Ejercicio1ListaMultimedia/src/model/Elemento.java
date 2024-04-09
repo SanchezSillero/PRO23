@@ -5,16 +5,23 @@ public class Elemento {
     private String titulo;
     private Persona autor;
     private double tamanio;
-    private String formato;
+    private Formato formato;
 
     public Elemento() {
     }
 
-    public Elemento(int identificador, String titulo, Persona autor, double tamaño, String formato) {
+    public Elemento(int identificador, String titulo, Persona autor, double tamaño, Formato formato) {
         this.identificador = identificador;
         this.titulo = titulo;
         this.autor = autor;
         this.tamanio = tamaño;
+        this.formato = formato;
+    }
+
+    public Elemento(String titulo, Persona autor, double tamanio, Formato formato) {
+        this.titulo = titulo;
+        this.autor = autor;
+        this.tamanio = tamanio;
         this.formato = formato;
     }
 
@@ -58,11 +65,11 @@ public class Elemento {
         this.tamanio = tamaño;
     }
 
-    public String getFormato() {
+    public Formato getFormato() {
         return formato;
     }
 
-    public void setFormato(String formato) {
+    public void setFormato(Formato formato) {
         this.formato = formato;
     }
 }

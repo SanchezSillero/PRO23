@@ -9,8 +9,14 @@ public class Video extends Elemento {
     public Video() {
     }
 
-    public Video(int identificador, String titulo, Persona autor, double tamaño, String formato, Persona director, ArrayList<Persona> actores) {
+    public Video(int identificador, String titulo, Persona autor, double tamaño, Formato formato, Persona director, ArrayList<Persona> actores) {
         super(identificador, titulo, autor, tamaño, formato);
+        this.director = director;
+        this.actores = actores;
+    }
+
+    public Video(String titulo, Persona autor, double tamanio, Formato formato, Persona director, ArrayList<Persona> actores) {
+        super(titulo, autor, tamanio, formato);
         this.director = director;
         this.actores = actores;
     }

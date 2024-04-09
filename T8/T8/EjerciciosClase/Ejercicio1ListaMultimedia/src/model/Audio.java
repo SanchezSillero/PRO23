@@ -2,13 +2,19 @@ package model;
 
 public class Audio extends Elemento{
     private double duracion;
-    private String soporte;
+    private Soporte soporte;
 
     public Audio() {
     }
 
-    public Audio(int identificador, String titulo, Persona autor, double tamaño, String formato, double duracion, String soporte) {
+    public Audio(int identificador, String titulo, Persona autor, double tamaño, Formato formato, double duracion, Soporte soporte) {
         super(identificador, titulo, autor, tamaño, formato);
+        this.duracion = duracion;
+        this.soporte = soporte;
+    }
+
+    public Audio(String titulo, Persona autor, double tamanio, Formato formato, double duracion, Soporte soporte) {
+        super(titulo, autor, tamanio, formato);
         this.duracion = duracion;
         this.soporte = soporte;
     }
@@ -28,11 +34,11 @@ public class Audio extends Elemento{
         this.duracion = duracion;
     }
 
-    public String getSoporte() {
+    public Soporte getSoporte() {
         return soporte;
     }
 
-    public void setSoporte(String soporte) {
+    public void setSoporte(Soporte soporte) {
         this.soporte = soporte;
     }
 }

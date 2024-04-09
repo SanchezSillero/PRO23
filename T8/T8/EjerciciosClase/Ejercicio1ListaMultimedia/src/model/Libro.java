@@ -6,8 +6,14 @@ public class Libro extends Elemento {
     public Libro() {
     }
 
-    public Libro(int identificador, String titulo, Persona autor, double tamaño, String formato, int isbn, int numeroPaginas) {
+    public Libro(int identificador, String titulo, Persona autor, double tamaño, Formato formato, int isbn, int numeroPaginas) {
         super(identificador, titulo, autor, tamaño, formato);
+        this.isbn = isbn;
+        this.numeroPaginas = numeroPaginas;
+    }
+
+    public Libro(String titulo, Persona autor, double tamanio, Formato formato, int isbn, int numeroPaginas) {
+        super(titulo, autor, tamanio, formato);
         this.isbn = isbn;
         this.numeroPaginas = numeroPaginas;
     }
