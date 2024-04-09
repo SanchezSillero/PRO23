@@ -21,7 +21,7 @@ public class Elemento {
     public void mostrarDatos() {
         System.out.println("Identificador: " + identificador);
         System.out.println("Título: " + titulo);
-        System.out.println("Autor: " + autor);
+        System.out.println("Autor: " + autor.getNombre());
         System.out.println("Tamaño: " + tamanio);
         System.out.println("Formato: " + formato);
     }

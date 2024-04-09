@@ -6,6 +6,10 @@ public class Persona {
     public Persona() {
     }
 
+    public Persona(String nombre) {
+        this.nombre = nombre;
+    }
+
     public Persona(String nombre, String dni) {
         this.nombre = nombre;
         this.dni = dni;
