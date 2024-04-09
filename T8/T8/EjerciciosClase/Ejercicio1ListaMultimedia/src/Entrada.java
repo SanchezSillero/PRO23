@@ -103,10 +103,49 @@ public class Entrada {
                             }
                         }
                     }while (opcion1!=4);
+                    break;
                 }
                 case 2: {
+                    System.out.println("Introduzca el identificador del elemento que desea eliminar");
+                    int identificador = scanner.nextInt();
+                    coleccion.borrarElemento(identificador);
+                    break;
                 }
                 case 3: {
+                    int opcion3;
+                    do {
+                        System.out.println("¿Qué tipo de elementos quiere ver?\n\t1. Libros\t2. Videos\t3. Audios\t4. Todos\t5. Salir");
+                        opcion3 = scanner.nextInt();
+                        switch (opcion3){
+                            case 1:{
+                                System.out.println("--LISTADO DE ELEMENTOS TIPO LIBRO");
+                                coleccion.listarDetalle(1);
+                                break;
+                            }
+                            case 2:{
+                                System.out.println("--LISTADO DE ELEMENTOS TIPO VIDEO");
+                                coleccion.listarDetalle(2);
+                                break;
+                            }
+                            case 3:{
+                                System.out.println("--LISTADO DE ELEMENTOS TIPO AUDIO");
+                                coleccion.listarDetalle(3);
+                                break;
+                            }
+                            case 4:{
+                                System.out.println("--LISTADO DE TODOS LOS ELEMENTOS");
+                                coleccion.listarElemento();
+                                break;
+                            }
+                            case 5: {
+                                break;
+                            }
+                            default: {
+                                System.out.println("Opción no válida");
+                            }
+                        }
+                    }while(opcion3!=5);
+                    break;
                 }
                 case 4: {
                     System.out.println("¡HASTA PRONTO!");
