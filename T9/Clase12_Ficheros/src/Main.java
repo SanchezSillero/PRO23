@@ -6,6 +6,8 @@ public class Main {
        //METODOS
         // operacionesFicheros.lecturaInformacion();
         //operacionesFicheros.lecturaFichero();
-        operacionesFicheros.escrituraFichero();
+        //operacionesFicheros.escrituraFichero();
+        //operacionesFicheros.escrituraObjeto();
+        operacionesFicheros.lecturaObjeto();
     }
 }
