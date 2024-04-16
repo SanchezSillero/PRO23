@@ -1,9 +1,10 @@
 package controller;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 
 public class OperacionesFicheros {
+
+    //SACAR INFORMACION DE LOS FICHEROS
     public void lecturaInformacion(){
         //Obtener informaicon de un fichero
         File file = new File("src/resources");
@@ -44,5 +45,81 @@ public class OperacionesFicheros {
         }
     }
 
-    public void lect
+
+    //OPERACIONES SOBRE FICHEROS
+    public void lecturaFichero() {
+        File file = new File("src/resources/ejemplos/lectura.txt");
+        //File -> FileReader (caracter a caracter) -> BufferedReader (linea a linea)
+
+
+        FileReader fileReader = null; //este objeto me permite poner un fichero en modo lectura
+        /* lo igualamos a nulo en vez de igualarlo directamente porque como todo flujo de  datos se tiene que se cerrar,
+        primero lo igualo a nullo, luego lo inicializo para poder meterlo dentro de un bloque try catch, porque lo voy a cerrar
+        siempre en el finally, que se ejecuta de todas todas y queremos cerrar los flujos de todas todas */
+
+        BufferedReader bufferedReader = null;
+
+        try {
+            fileReader = new FileReader(file);//lo inincializo. Abro el flujo
+            bufferedReader= new BufferedReader(fileReader);
+            //leo linea a linea -> readline()
+            //lee si existe/ (caracter a caracter) -> read()
+            //leer el fichero de forma completa -> hasta que codigo sea -1(ausencia de datos)
+            //int codigo =  fileReader.read();
+            /*int codigo = -1;
+            while ((codigo=fileReader.read())!=-1){
+                System.out.print((char) codigo);
+            }*/
+
+             String linea = null;
+             while ((linea = bufferedReader.readLine())!=null){
+                 System.out.println(linea);
+             }
+
+        } catch (FileNotFoundException e) {
+            System.out.println("El fichero no existe");
+        } catch (IOException e){
+            System.out.println("El fichero no se puede leer");
+        } finally {//cierro el flujo
+            try {
+                bufferedReader.close();
+            } catch (IOException e) {
+                System.out.println("Error en cerrado");;
+            }catch (NullPointerException e){//Recomendable poner
+                System.out.println("Cerrado en nulo");
+            }
+        }
+    }
+
+    public void escrituraFichero(){
+        //File - FileWriter - PrintWriter
+
+        File file = new File("src/resources/ejemplos/escritura.txt");
+        FileWriter fileWriter = null;
+        PrintWriter printWriter=null;
+
+        try {
+            fileWriter = new FileWriter(file); //sin el true pisa lo ya escrito, con el true anexa
+            //fileWriter.write(45);*/
+            printWriter = new PrintWriter(fileWriter);
+            printWriter.println("Esto es una frase con printWriter");
+            printWriter.println("Esto es la segunda frase");
+
+        } catch (IOException e) {
+            System.out.println("Error en la escritura");
+        }finally {
+            try {
+                fileWriter.close();
+                printWriter.close();
+            } catch (IOException e) {
+                System.out.println("error al cerrar");
+            }catch (NullPointerException e){
+                System.out.println("Cerrado en nulo");
+            }
+        }
+    }
+
+
+
+
 }
