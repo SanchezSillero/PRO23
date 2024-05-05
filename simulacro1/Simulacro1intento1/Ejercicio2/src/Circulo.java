@@ -3,6 +3,7 @@ import java.util.Objects;
 public class Circulo extends Figura2D{
     private double radio;
 
+
     public Circulo(String nombre, double radio) {
         super(nombre);
         this.radio = radio;

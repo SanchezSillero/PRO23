@@ -10,6 +10,7 @@ public class Formulario {
         String apellidos = null;
         String dni = null;
         String email = null;
+        boolean valido = true;
         do {
             System.out.println("1. Rellenar nombre");
             System.out.println("2. Rellenar apellidos");
@@ -49,6 +50,7 @@ public class Formulario {
                     break;
                 case 5:
                     if (nombre == null || apellidos == null || dni == null || email == null){
+                        valido = false;
                         System.out.println("Debes rellenar todos los campos del formulario");
                     }else {
                     System.out.println("¡Hasta pronto!");
@@ -56,7 +58,7 @@ public class Formulario {
                     break;
             }
 
-        }while (opcion != 5 || nombre == null || apellidos == null || dni == null || email == null);
+        }while (opcion != 5 || !valido);
     }
     public static void pulseEnter(){
         System.out.println("Pulse Enter para continuar");
