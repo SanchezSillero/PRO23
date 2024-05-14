@@ -7,9 +7,14 @@ public class Persona {
     private String nombre;
     private int edad;
 
-    public Persona(String nombre, int edad) {
+    public Persona(String nombre, int edad) throws EdadInvalidaException, NombreInvalidoException {
         this.nombre = nombre;
         this.edad = edad;
+        if (edad < 0) {
+            throw new EdadInvalidaException("Edad no válida");
+        } else if (nombre == null) {
+            throw new NombreInvalidoException("Debe introducir un nombre");
+        }
     }
 
     public void validarDatos() throws EdadInvalidaException, NombreInvalidoException {

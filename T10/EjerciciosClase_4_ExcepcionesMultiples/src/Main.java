@@ -4,11 +4,32 @@ import utils.NombreInvalidoException;
 
 public class Main {
     public static void main(String[] args) {
-        Persona persona1 = new Persona("Nombre1", 20);
-        Persona persona2 = new Persona("Nombre2", -15);
-        Persona persona3 = new Persona(null,20);
+        try {
+            Persona persona1 = new Persona("Nombre1", 20);
+
+        } catch (EdadInvalidaException e) {
+            System.out.println(e.getMessage());
+        } catch (NombreInvalidoException e) {
+            System.out.println(e.getMessage());
+        }
 
         try {
+            Persona persona2 = new Persona("Nombre2", -15);
+        } catch (EdadInvalidaException e) {
+            System.out.println(e.getMessage());
+        } catch (NombreInvalidoException e) {
+            System.out.println(e.getMessage());
+        }
+
+        try {
+            Persona persona3 = new Persona(null,20);
+        } catch (EdadInvalidaException e) {
+            System.out.println(e.getMessage());
+        } catch (NombreInvalidoException e) {
+            System.out.println(e.getMessage());
+        }
+
+       /* try {
             persona1.validarDatos();
         } catch (EdadInvalidaException e) {
             System.out.println(e.getMessage());
@@ -37,5 +58,7 @@ public class Main {
         } finally {
             System.out.println("Terminada validacion");
         }
+
+        */
     }
 }
